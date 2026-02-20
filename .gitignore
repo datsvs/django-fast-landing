@@ -7,3 +7,9 @@
 *.pyc
 *.pyo
 *.pyd
+# Игнорируем всё содержимое папки migrations
+core/migrations/*
+# Разрешаем Git видеть файл __init__.py
+!core/migrations/__init__.py
+# Игнорируем базу данных SQLite
+db.sqlite3
