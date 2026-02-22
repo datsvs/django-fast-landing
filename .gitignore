@@ -1,0 +1,17 @@
+/.temp
+/.venv
+# Ignore all __pycache__ folders in the entire project
+**/__pycache__/
+# It's also useful to ignore the bytecode files themselves,
+# if they happen to be stored separately
+*.pyc
+*.pyo
+*.pyd
+# Ignore all contents of the migrations folder
+core/migrations/*
+# Allow Git to see the __init__.py file
+!core/migrations/__init__.py
+# Ignore the SQLite database
+db.sqlite3
+# Ignore the environment settings file
+.env

@@ -1,0 +1,11 @@
+{% for item in menu_items %}
+    <li class="group relative">
+        <a
+        href="{{ item.url }}"
+        class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 {% if forloop.first %}lg:mx-0{% else %}lg:mr-0{% endif %} lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 
+        {% if request.path == item.url %}active{% endif %}"
+        role="menuitem"
+        > {{ item.title }}
+        </a>
+    </li>
+{% endfor %}
