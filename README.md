@@ -92,7 +92,7 @@ python manage.py runserver
 
 ## Documentation
 
-[Link](docs/README.md) to documentation.
+Here is the [link](docs/README.md) to the documentation.
 
 ## Bugs and Issues
 
