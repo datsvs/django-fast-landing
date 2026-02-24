@@ -191,7 +191,7 @@
                   role="menu"
                   aria-label="Navigation menu"
                 >
-                {% show_menu 'menu-header' 'menu-header' %}             
+                {% show_menu 'header-menu-main' 'menu-header' %}             
                 </ul>
               </nav>
             </div>
@@ -2964,76 +2964,8 @@
               </div>
             </div>
           </div>
-          <div class="col-6 lg:col-2">
-            <div class="w-full">
-              <h4 class="mb-9 text-lg font-semibold text-inherit">Solutions</h4>
-              <ul>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Marketing</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Analytics</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Commerce</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Insights</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-6 lg:col-2">
-            <div class="w-full">
-              <h4 class="mb-9 text-lg font-semibold text-inherit">Support</h4>
-              <ul>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Pricing</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Documentation</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >Guides</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    class="mb-3 inline-block text-body-dark-11 hover:text-primary"
-                    >API Status</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
+          {% show_menu 'footer-menu-solutions' 'menu-footer-1' %}
+          {% show_menu 'footer-menu-support' 'menu-footer-1' %}
           <div class="col-12 -order-3 lg:col-4 lg:order-1">
             <div class="w-full">
               <h4 class="mb-9 text-lg font-semibold text-inherit">Subscribe</h4>
@@ -3066,27 +2998,7 @@
       <div class="container py-8">
         <div class="flex flex-wrap">
           <div class="w-full md:w-1/2">
-            <div class="my-1">
-              <div
-                class="flex flex-wrap justify-center gap-x-3 md:justify-start"
-              >
-                <a
-                  href="javascript:void(0)"
-                  class="text-body-dark-11 hover:text-body-dark-12"
-                  >Privacy Policy</a
-                >
-                <a
-                  href="javascript:void(0)"
-                  class="text-body-dark-11 hover:text-body-dark-12"
-                  >Legal Notice</a
-                >
-                <a
-                  href="javascript:void(0)"
-                  class="text-body-dark-11 hover:text-body-dark-12"
-                  >Terms of Service</a
-                >
-              </div>
-            </div>
+            {% show_menu 'footer-menu-legal' 'menu-footer-2' %}
           </div>
 
           <div class="w-full md:w-1/2">

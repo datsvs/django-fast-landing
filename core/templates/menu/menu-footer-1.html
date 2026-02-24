@@ -1,0 +1,18 @@
+{% if menu %}
+<div class="col-6 lg:col-2">
+    <div class="w-full">
+      <h4 class="mb-9 text-lg font-semibold text-inherit">{{ menu.name }}</h4>
+      <ul>
+        {% for item in menu_items %}
+        <li>
+          <a
+            href="{{ item.url }}"
+            class="mb-3 inline-block text-body-dark-11 hover:text-primary"
+            >{{ item.title }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endif %}
