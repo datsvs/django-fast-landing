@@ -1,23 +1,23 @@
 from django import template
 # Предположим, у вас есть модель меню
-from core.models import Menu
+from core.models import Tab
 
 register = template.Library()
 
 @register.inclusion_tag('file-loader/loader.html', takes_context=True)
-def show_menu(context, slug, template_name='menu-default'):
+def show_tabs(context, slug, template_name='tabs-default'):
     try:
         # Получаем объект меню целиком вместе с элементами
-        menu = Menu.objects.prefetch_related('items').get(slug=slug)
-        items = menu.items.all().order_by('order')
-    except Menu.DoesNotExist:
-        menu = None
-        items = []
+        tab = Tab.objects.prefetch_related('tabs').get(slug=slug)
+        tabs = tab.tabs.all().order_by('order')
+    except Tab.DoesNotExist:
+        tab = None
+        tabs = []
     # Формируем путь к конкретному файлу верстки
-    full_template_path = f'menu/{template_name}.html'
+    full_template_path = f'tabs/{template_name}.html'
     return {
-        'menu': menu,
-        'menu_items': items,
+        'tab': tab,
+        'tabs': tabs,
         'template_name': full_template_path,
         # Чтобы работали активные ссылки
         'request': context.get('request'),

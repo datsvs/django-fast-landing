@@ -1,0 +1,34 @@
+{% if tab and tabs %}
+<div class="tabs scroll-revealed">
+    <nav
+      class="tabs-nav flex flex-wrap gap-4 my-8"
+      role="tablist"
+      aria-label="About us tabs"
+    >
+    {% for tab in tabs %}
+      <button
+        type="button"
+        class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color{% if request.path == item.url %}active{% endif %}"
+        data-web-toggle="tabs"
+        data-web-target="tabs-panel-{{ tab.title|slugify }}"
+        id="tabs-list-{{ tab.title|slugify }}"
+        role="tab"
+        aria-controls="tabs-panel-{{ tab.title|slugify }}"
+      >
+      {{ tab.title }}
+      </button>
+    {% endfor %}
+    </nav>
+    {% for tab in tabs %}
+    <div
+      class="tabs-content mt-4"
+      id="tabs-panel-{{ tab.title|slugify }}"
+      tabindex="-1"
+      role="tabpanel"
+      aria-labelledby="tabs-list-{{ tab.title|slugify }}"
+    >
+      {{ tab.content|safe }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -1,5 +1,6 @@
 {% load static %}
 {% load menu_tags %}
+{% load tabs_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -170,31 +171,7 @@
             </a>
           </div>
           <div class="flex w-full items-center justify-between px-5">
-            <div>
-              <button
-                type="button"
-                class="ic-navbar-toggler absolute right-4 top-1/2 block -translate-y-1/2 rounded-md px-3 py-[6px] text-[22px]/none text-primary-color ring-primary focus:ring-2 lg:hidden"
-                data-web-toggle="navbar-collapse"
-                data-web-target="navbarMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation menu"
-              >
-                <i class="lni lni-menu"></i>
-              </button>
-
-              <nav
-                id="navbarMenu"
-                class="ic-navbar-collapse absolute right-4 top-[80px] w-full max-w-[250px] rounded-lg hidden bg-primary-light-1 py-5 shadow-lg dark:bg-primary-dark-1 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6"
-              >
-                <ul
-                  class="block lg:flex"
-                  role="menu"
-                  aria-label="Navigation menu"
-                >
-                {% show_menu 'header-menu-main' 'menu-header' %}             
-                </ul>
-              </nav>
-            </div>
+            {% show_menu 'header-menu-main' 'menu-header' %}
             <div class="flex items-center justify-end pr-[52px] lg:pr-0">
               <button
                 type="button"
@@ -345,113 +322,7 @@
                   Our team comes with the experience and knowledge
                 </h2>
               </div>
-
-              <div class="tabs scroll-revealed">
-                <nav
-                  class="tabs-nav flex flex-wrap gap-4 my-8"
-                  role="tablist"
-                  aria-label="About us tabs"
-                >
-                  <button
-                    type="button"
-                    class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                    data-web-toggle="tabs"
-                    data-web-target="tabs-panel-profile"
-                    id="tabs-list-profile"
-                    role="tab"
-                    aria-controls="tabs-panel-profile"
-                  >
-                    Our Profile
-                  </button>
-
-                  <button
-                    type="button"
-                    class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                    data-web-toggle="tabs"
-                    data-web-target="tabs-panel-vision"
-                    id="tabs-list-vision"
-                    role="tab"
-                    aria-controls="tabs-panel-vision"
-                  >
-                    Our Vision
-                  </button>
-
-                  <button
-                    type="button"
-                    class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                    data-web-toggle="tabs"
-                    data-web-target="tabs-panel-history"
-                    id="tabs-list-history"
-                    role="tab"
-                    aria-controls="tabs-panel-history"
-                  >
-                    Our History
-                  </button>
-                </nav>
-
-                <div
-                  class="tabs-content mt-4"
-                  id="tabs-panel-profile"
-                  tabindex="-1"
-                  role="tabpanel"
-                  aria-labelledby="tabs-list-profile"
-                >
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, look like
-                    readable English.
-                  </p>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have in some form, by injected
-                    humour.
-                  </p>
-                </div>
-
-                <div
-                  class="tabs-content mt-4"
-                  id="tabs-panel-vision"
-                  tabindex="-1"
-                  role="tabpanel"
-                  aria-labelledby="tabs-list-vision"
-                >
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, look like
-                    readable English.
-                  </p>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have in some form, by injected
-                    humour.
-                  </p>
-                </div>
-
-                <div
-                  class="tabs-content mt-4"
-                  id="tabs-panel-history"
-                  tabindex="-1"
-                  role="tabpanel"
-                  aria-labelledby="tabs-list-history"
-                >
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, look like
-                    readable English.
-                  </p>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have in some form, by injected
-                    humour.
-                  </p>
-                </div>
-              </div>
+              {% show_tabs 'tab-about-us' 'tabs-about-us' %}
             </div>
           </div>
         </div>

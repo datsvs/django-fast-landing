@@ -1,11 +1,36 @@
-{% for item in menu_items %}
-    <li class="group relative">
-        <a
-        href="{{ item.url }}"
-        class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 {% if forloop.first %}lg:mx-0{% else %}lg:mr-0{% endif %} lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 
-        {% if request.path == item.url %}active{% endif %}"
-        role="menuitem"
-        > {{ item.title }}
-        </a>
-    </li>
-{% endfor %}
+{% if menu and menu_items %}
+<div>
+    <button
+      type="button"
+      class="ic-navbar-toggler absolute right-4 top-1/2 block -translate-y-1/2 rounded-md px-3 py-[6px] text-[22px]/none text-primary-color ring-primary focus:ring-2 lg:hidden"
+      data-web-toggle="navbar-collapse"
+      data-web-target="navbarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+    >
+      <i class="lni lni-menu"></i>
+    </button>
+
+    <nav
+      id="navbarMenu"
+      class="ic-navbar-collapse absolute right-4 top-[80px] w-full max-w-[250px] rounded-lg hidden bg-primary-light-1 py-5 shadow-lg dark:bg-primary-dark-1 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6"
+    >
+      <ul
+        class="block lg:flex"
+        role="menu"
+        aria-label="Navigation menu"
+      >
+        {% for item in menu_items %}
+        <li class="group relative">
+            <a
+            href="{{ item.url }}"
+            class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 {% if forloop.first %}lg:mx-0{% else %}lg:mr-0{% endif %} lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70{% if request.path == item.url %}active{% endif %}"
+            role="menuitem"
+            > {{ item.title }}
+            </a>
+        </li>
+        {% endfor %}           
+      </ul>
+    </nav>
+</div>
+{% endif %}

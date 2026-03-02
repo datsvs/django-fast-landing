@@ -1,0 +1,16 @@
+{% if tab and tabs %}
+<div>
+    <nav>
+    {% for tab in tabs %}
+      <button>
+      {{ tab.title }}
+      </button>
+    {% endfor %}
+    </nav>
+    {% for tab in tabs %}
+    <div>
+      {{ tab.content|safe }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

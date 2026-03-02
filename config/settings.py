@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # Добавляем наше приложение
     'core',
     'adminsortable2',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +138,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -145,3 +147,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# Базовая настройка CKEditor 5
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar':['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', ],
+    },
+}
+
+
+# Базовая настройка санитайзера nh3
+NH3_ALLOWED_TAGS = {'p', 'b', 'i', 'strong', 'em', 'a', 'ul', 'li', 'ol', 'br', 'h2', 'h3'}
+NH3_ALLOWED_ATTRIBUTES = {
+    'a': {'href', 'title', 'target'},
+    'p': {'style', 'class'},
+}

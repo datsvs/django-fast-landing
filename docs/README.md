@@ -6,6 +6,7 @@
 * [Fix the database.](fix-the-database.md)
 * [Environment Settings File](environment-settings-file.md)
 
-## Functional
+## Functionality (Template Tag)
 
-* [Creating a menu.](creating-a-menu.md)
+* [Creating menu.](creating-menu.md)
+* [Creating tabs.](creating-tabs.md)
