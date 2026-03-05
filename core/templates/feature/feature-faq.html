@@ -1,0 +1,23 @@
+{% if feature and feature_cards %}
+<div class="grid gap-x-8 gap-y-12 grid-cols-1 lg:grid-cols-2">
+    {% for card in feature_cards %}
+    <div class="scroll-revealed flex">
+      <div
+        class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-primary-color text-[28px] sm:mr-6 sm:h-[60px] sm:max-w-[60px] sm:text-[32px]"
+      >
+        <i class="lni {{ card.icon_code|slugify }}"></i>
+      </div>
+      <div class="w-full">
+        <h3
+          class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl"
+        >
+          {{ card.title }}
+        </h3>
+        <div class="text-body-light-11 dark:text-body-dark-11">
+          {{ card.content|safe }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

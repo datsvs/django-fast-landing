@@ -1,0 +1,19 @@
+{% if feature and feature_cards %}
+<div>
+    {% for card in feature_cards %}
+    <div">
+      <div>
+        <i class="lni {{ card.icon_code|slugify }}"></i>
+      </div>
+      <div>
+        <h3>
+          {{ card.title }}
+        </h3>
+        <div>
+          {{ card.content|safe }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

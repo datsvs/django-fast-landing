@@ -53,31 +53,31 @@ from django.conf import settings
 
 # In the admin panel, there is a Tab object, at the bottom you will see a table with all its TabItems.
 class Tab(models.Model):
-    title = models.CharField("Название группы табов", max_length=100)
-    slug = models.SlugField("Слаг", unique=True)
+    title = models.CharField("Tab group name", max_length=100)
+    slug = models.SlugField("Slug", unique=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = "Группа табов"
-        verbose_name_plural = "Группы табов"
+        verbose_name = "Tab group"
+        verbose_name_plural = "Tab groups"
 
 # Creating tabs in the admin panel
 class TabItem(models.Model):
     # Add a ForeignKey relationship
     group = models.ForeignKey(Tab, related_name='tabs', on_delete=models.CASCADE)
-    title = models.CharField("Заголовок таба", max_length=50)
-    content = CKEditor5Field('Контент', config_name='default')
-    order = models.PositiveIntegerField("Порядок", default=0)
+    title = models.CharField("Tab title", max_length=50)
+    content = CKEditor5Field('Content', config_name='default')
+    order = models.PositiveIntegerField("Order", default=0)
 
     def __str__(self):
         return self.title
     # Sort by the order field, then by title and id for order stability
     class Meta:
         ordering = ['order', 'title', 'id']
-        verbose_name = "Таб"
-        verbose_name_plural = "Табы"
+        verbose_name = "Tab"
+        verbose_name_plural = "Tabs"
 
     def save(self, *args, **kwargs):
         if self.content:
@@ -210,7 +210,7 @@ def show_tabs(context, slug, template_name='tabs-default'):
 
 3. **Create the tabs template (`core/templates/tabs/tabs-about-us.html`)**
 
-This file will contain only the HTML code for the tabs itself. Create it in the `core/templates/tabs/` directory.
+This file will contain only the HTML code for the `tabs` itself. Create it in the `core/templates/tabs/` directory.
 
 ```HTML copy
 {% if tab and tabs %}

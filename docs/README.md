@@ -4,9 +4,10 @@
 
 * [For those looking to do a clean install themselves.](clean-install.md)
 * [Fix the database.](fix-the-database.md)
-* [Environment Settings File](environment-settings-file.md)
+* [Environment Settings File.](environment-settings-file.md)
 
 ## Functionality (Template Tag)
 
 * [Creating menu.](creating-menu.md)
 * [Creating tabs.](creating-tabs.md)
+* [Creating feature.](creating-feature.md)

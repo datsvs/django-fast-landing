@@ -1,6 +1,7 @@
 {% load static %}
 {% load menu_tags %}
 {% load tabs_tags %}
+{% load feature_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -341,128 +342,7 @@
               the majority have suffered alteration in some form.
             </p>
           </div>
-
-          <div class="row">
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-capsule"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Refreshing Design
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-tailwindcss"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Solid Tailwind CSS
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-gift"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Free and Open-Source
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-layout"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Multipurpose Template
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-layers"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Fully Customizable
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-grid-alt"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    All Essential Elements
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% show_feature 'feature-services' 'feature-services' %}
         </div>
       </section>
 
@@ -1465,88 +1345,7 @@
               the majority have suffered alteration in some form.
             </p>
           </div>
-
-          <div class="grid gap-x-8 gap-y-12 grid-cols-1 lg:grid-cols-2">
-            <div class="scroll-revealed flex">
-              <div
-                class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-primary-color text-[28px] sm:mr-6 sm:h-[60px] sm:max-w-[60px] sm:text-[32px]"
-              >
-                <i class="lni lni-question-circle"></i>
-              </div>
-              <div class="w-full">
-                <h3
-                  class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl"
-                >
-                  Lorem ipsum dolor sit amet?
-                </h3>
-                <p class="text-body-light-11 dark:text-body-dark-11">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Corrupti minus a eaque labore delectus quas exercitationem
-                  iusto doloribus blanditiis assumenda.
-                </p>
-              </div>
-            </div>
-
-            <div class="scroll-revealed flex">
-              <div
-                class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-primary-color text-[28px] sm:mr-6 sm:h-[60px] sm:max-w-[60px] sm:text-[32px]"
-              >
-                <i class="lni lni-question-circle"></i>
-              </div>
-              <div class="w-full">
-                <h3
-                  class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl"
-                >
-                  Lorem ipsum dolor sit amet?
-                </h3>
-                <p class="text-body-light-11 dark:text-body-dark-11">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Corrupti minus a eaque labore delectus quas exercitationem
-                  iusto doloribus blanditiis assumenda.
-                </p>
-              </div>
-            </div>
-
-            <div class="scroll-revealed flex">
-              <div
-                class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-primary-color text-[28px] sm:mr-6 sm:h-[60px] sm:max-w-[60px] sm:text-[32px]"
-              >
-                <i class="lni lni-question-circle"></i>
-              </div>
-              <div class="w-full">
-                <h3
-                  class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl"
-                >
-                  Lorem ipsum dolor sit amet?
-                </h3>
-                <p class="text-body-light-11 dark:text-body-dark-11">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Corrupti minus a eaque labore delectus quas exercitationem
-                  iusto doloribus blanditiis assumenda.
-                </p>
-              </div>
-            </div>
-
-            <div class="scroll-revealed flex">
-              <div
-                class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-primary-color text-[28px] sm:mr-6 sm:h-[60px] sm:max-w-[60px] sm:text-[32px]"
-              >
-                <i class="lni lni-question-circle"></i>
-              </div>
-              <div class="w-full">
-                <h3
-                  class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl"
-                >
-                  Lorem ipsum dolor sit amet?
-                </h3>
-                <p class="text-body-light-11 dark:text-body-dark-11">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Corrupti minus a eaque labore delectus quas exercitationem
-                  iusto doloribus blanditiis assumenda.
-                </p>
-              </div>
-            </div>
-          </div>
+          {% show_feature 'feature-faq' 'feature-faq' %}
         </div>
 
         <div>

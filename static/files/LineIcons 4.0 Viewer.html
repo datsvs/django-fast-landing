@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LineIcons 4.0 Library Explorer</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f4f9; padding: 40px; color: #222; }
+        .header-container { text-align: center; margin-bottom: 40px; }
+        h2 { margin-bottom: 10px; font-weight: 600; }
+        p.subtitle { color: #666; font-size: 1.1rem; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+            gap: 15px; 
+        }
+        
+        .card { 
+            background: white; 
+            padding: 25px 10px; 
+            text-align: center; 
+            border-radius: 12px; 
+            border: 1px solid #e0e0e0; 
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Icons are strictly black */
+        .card i { 
+            font-size: 32px; 
+            color: #000; 
+            display: block; 
+            margin-bottom: 12px; 
+        }
+        
+        .name { 
+            font-size: 11px; 
+            color: #777; 
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .card:hover {
+            border-color: #000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateY(-4px);
+        }
+
+        .card:active { transform: scale(0.92); }
+
+        /* Notification Toast */
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            display: none;
+            z-index: 9999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h2>LineIcons 4.0 Library</h2>
+        <p class="subtitle">Click on any icon to copy its class name!</p>
+    </div>
+
+    <div id="toast" class="copy-toast">Class copied to clipboard!</div>
+    <div id="grid" class="grid">Analyzing styles...</div>
+
+    <script>
+        window.onload = function() {
+            const grid = document.getElementById('grid');
+            const toast = document.getElementById('toast');
+            const icons = [];
+
+            // List of excluded utility classes
+            const excludedClasses = [
+                'lni', 
+                'lni-sm', 
+                'lni-lg', 
+                'lni-16', 
+                'lni-32', 
+                'lni-is-spinning', 
+                'lni-rotate-90', 
+                'lni-rotate-180', 
+                'lni-rotate-270', 
+                'lni-flip-y', 
+                'lni-flip-x'
+            ];
+
+            try {
+                // Locate the LineIcons stylesheet
+                const stylesheet = Array.from(document.styleSheets).find(sheet => 
+                    sheet.href && sheet.href.includes('lineicons.css')
+                );
+
+                if (!stylesheet) {
+                    grid.innerHTML = "Error: LineIcons CSS file not found.";
+                    return;
+                }
+
+                const rules = stylesheet.cssRules || stylesheet.rules;
+                
+                for (let rule of rules) {
+                    if (rule.selectorText && rule.selectorText.startsWith('.lni-')) {
+                        // Extract clean class name
+                        let rawName = rule.selectorText.split(':')[0].split(',')[0].replace('.', '').trim();
+                        
+                        // Filter out excluded classes and duplicates
+                        if (!excludedClasses.includes(rawName) && !icons.includes(rawName)) {
+                            icons.push(rawName);
+                        }
+                    }
+                }
+
+                grid.innerHTML = ''; 
+                
+                // Sort alphabetically
+                icons.sort().forEach(function(iconName) {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = '<i class="lni ' + iconName + '"></i>' +
+                                     '<div class="name">' + iconName + '</div>';
+                    
+                    card.onclick = function() {
+                        copyToClipboard(iconName);
+                    };
+                    
+                    grid.appendChild(card);
+                });
+
+            } catch (e) {
+                grid.innerHTML = "Access Error (CORS). The CDN server might be blocking script access.";
+                console.error(e);
+            }
+
+            function copyToClipboard(text) {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+
+                // Update toast text with icon name and show it
+                toast.innerHTML = 'Class <b>' + text + '</b> copied to clipboard!';
+                toast.style.display = 'block';
+                
+                // Hide toast after 2 seconds
+                setTimeout(() => { toast.style.display = 'none'; }, 3000);
+            }
+        };
+    </script>
+</body>
+</html>
